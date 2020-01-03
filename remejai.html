@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Eiti į viršų</button>
+	
+		<div id="meniu">
+			<div><a href="homepage.html"><img id="logo" src="img/LOGO_OK.jpg"></a></div>
+			<div id="pavadinimas">KNYGŲ </br> KONTRABANDA</div>
+			<nav id='cssmenu'>
+
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li><a href='homepage.html'>PAGRINDINIS PUSLAPIS</a></li>
+<li><a href='istorija.html'>ISTORINĖS SĄLYGOS</a>
+
+</li>
+<li><a href='keliai.html'>KELIAI</a>
+   <ul>
+      <li><a href='platinimo_centrai.html'>SPAUDOS PLATINIMO CENTRAI</a></li>
+      <li><a href='vietos.html'>SPAUSDINIMO VIETOS</a></li>
+   </ul>
+</li>
+<li><a href='knygnesiai.html'>KNYGNEŠIAI</a>
+	<ul>
+      <li><a href='daraktoriai.html'>DARAKTORIAI</a></li>
+      <li><a href='remejai.html'>RĖMĖJAI</a></li>
+	  <li><a href='Bielinis.html'>JURGIS BIELINIS</a></li>
+      <li><a href='darbas.html'>KASDIENYBĖ</a></li>
+   </ul>
+</li>
+<li><a href='iamzinimas.html'>ĮAMŽINIMAS</a>
+	<ul>
+		<li><a href='filmai.html'>FILMAI</a></li>
+		
+	</ul>
+</li>
+</ul>
+</nav>
+		</div>
+				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+<script>
+(function($) {
+$.fn.menumaker = function(options) {  
+ var cssmenu = $(this), settings = $.extend({
+   format: "dropdown",
+   sticky: false
+ }, options);
+ return this.each(function() {
+   $(this).find(".button").on('click', function(){
+     $(this).toggleClass('menu-opened');
+     var mainmenu = $(this).next('ul');
+     if (mainmenu.hasClass('open')) { 
+       mainmenu.slideToggle().removeClass('open');
+     }
+     else {
+       mainmenu.slideToggle().addClass('open');
+       if (settings.format === "dropdown") {
+         mainmenu.find('ul').show();
+       }
+     }
+   });
+   cssmenu.find('li ul').parent().addClass('has-sub');
+multiTg = function() {
+     cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+     cssmenu.find('.submenu-button').on('click', function() {
+       $(this).toggleClass('submenu-opened');
+       if ($(this).siblings('ul').hasClass('open')) {
+         $(this).siblings('ul').removeClass('open').slideToggle();
+       }
+       else {
+         $(this).siblings('ul').addClass('open').slideToggle();
+       }
+     });
+   };
+   if (settings.format === 'multitoggle') multiTg();
+   else cssmenu.addClass('dropdown');
+   if (settings.sticky === true) cssmenu.css('position', 'fixed');
+resizeFix = function() {
+  var mediasize = 1000;
+     if ($( window ).width() > mediasize) {
+       cssmenu.find('ul').show();
+     }
+     if ($(window).width() <= mediasize) {
+       cssmenu.find('ul').hide().removeClass('open');
+     }
+   };
+   resizeFix();
+   return $(window).on('resize', resizeFix);
+ });
+  };
+})(jQuery);
+
+(function($){
+$(document).ready(function(){
+$("#cssmenu").menumaker({
+   format: "multitoggle"
+});
+});
+})(jQuery);
+</script>
+<h2 class="vardas">Martynas Sederavičius</h2>  
+	<div class="gridas3">
+			
+<div class="foto">
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img class="img" src="img/sederavicius.jpg" alt="Los Angeles">
+      </div>
+
+      <div class="item">
+        <img class="img" src="img/sederavicius1.jpg" alt="Chicago">
+      </div>
+    
+      <div class="item">
+        <img class="img" src="img/sederavicius2.jpg" alt="New york">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="tekstas">
+Tėvai - pasiturintys ūkininkai (apie 63 ha). Lukšiuose lankė kun. A.Tatarės mokyklą. Baigęs Marijampolės keturklasę mokyklą, pusbroliui kun. A. Martynaičiui padedant, mokėsi Varšuvos ir Seinų kunigų seminarijose. 1858 m. lapkričio mėn. 27 d. vysk. M. Valančius įšventino kunigu, kviesdamas Martynas Sederavičius. Nuotrauka iš B. Kaluškevičiaus archyvo talkinti jam dorinimo, švietimo ir blaivinimo darbe. 1858-1873 metais buvo vikaras Alvite, Griškabūdyje, Liudvinave ir Šakiuose. Vikaraudamas ragino žmones mokyti savo vaikus lietuviškai, mokydavo juos pats, surasdavo daraktorius. 1863 m. sukilimo metu slapstėsi Žemaitijoje. 1873 m. paskiriamas Sudargo klebonu. Patogi geografinė padėtis (parapija susisiekė su Prūsija) leido atsiskleisti jo, kaip religinių raštų kūrėjo, vertėjo, leidėjo ir platintojo, talentui. M. Sederevičiaus suburta organizacija pratęsė tuo metu jau likviduotos vysk. M. Valančiaus organizacijos darbą, apimdama dar didesnį regioną - visą Suvalkiją ir didelę dalį Žemaitijos. Literatūriniam darbui pasitelkė vertėjų, kalbos žinovų, perrašinėtojų. Iš Tytuvėnų atvyko bajoras S. Kušeliauskas, įtraukė vietinį eigulį J. Antanavičių ir kt. Leido ir platino tik religinio turinio spaudinius. Parengė ir išleido apie 30 knygelių ir maldaknygių. Jų platinimą laikydamas ypač svarbiu reikalu, pats tapo knygnešiu, subūrė ir išugdė daug padėjėjų (A. Baltrušaitis,  P. Pučiliauskas, J. Žemaitaitis ir dešimtys kitų). Talkino kunigai, apsišvietę ūkininkai, vietos inteligentai. Broliai Angrabaičiai savo namuose įsitaisė didelę knygrišyklą. Pats važinėdavo vežimu, daugiausia naktimis po tolimiausias parapijas Suvalkijoje ir Žemaitijoje, nuveždavo į Seinų kunigų seminariją, į Kauną ir kt. Buvo drąsus ir kartu atsargus, ištvermingas ir sumanus. Mokėdavo panaudoti caro valdininkų silpnybes, jų polinkį į alkoholį. Už pinigus spaudinius per sieną padėdavo pernešti ir muitininkai. Gausiai pavaišindavo atvykusius daryti kratų, todėl ir knygų nė karto nebuvo radę ir pats nebuvo areštuotas. Kaip ir ankstesnėse parapijose, rūpinosi vaikų mokymu, gabesnius siųsdavo mokytis amato. Turtų nesusikrovė, viską išleisdavo knygų spausdinimui ir platinimui.
+</div>
+</div>
+<h2 class="vardas">Motiejus Valančius</h2>
+<div class="gridas3">
+<div class="foto">
+    
+  <div id="myCarouse2" class="carousel slide" data-ride="carouse2">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarouse2" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarouse2" data-slide-to="1"></li>
+      <li data-target="#myCarouse2" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img class="img" src="img/valancius.jpg">
+      </div>
+
+      <div class="item">
+        <img class="img" src="img/valancius1.png">
+      </div>
+    
+      <div class="item">
+        <img class="img" src="img/valancius2.jpg">
+      </div>
+    </div>
+	
+
+    <!-- Left and right controls -->
+	<a class="left carousel-control" href="#myCarouse2" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarouse2" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="tekstas">Vyskupo M. Valančiaus vaidmuo spaudos draudimo pradžioje nevienodai tyrinėtojų vertinamas. V. Biržiška (1954) buvo tos nuomonės, kad M. Valančius „po poros metų griežtai persiorientavo ir visu frontu perėjo kovon prieš visus rusų pasikėsinimus prieš Lietuvos visuomenę ir visų pirma prieš rusiš-
+kas raides”. Ta nuomonė remiama faktu, jog 1865 m. M. Valančius buvo davęs sutikimą Vilniaus cenzūros komitetui spausdinti religinio turinio knygas rusų raidėmis. Tačiau sutikimas buvo sąlyginis ir gali būti aiškinamas kaip delsimo taktika, nes viešai priešintis jau vien dėl to negalėjo, kad tuo metu buvo griežtoj policijos priežiūroj.
+Išspausdinus pirmąsias knygas graždanka, 1866 m. pradžioje M. Valančius jau protestavo valdžios įstaigose ne tik dėl turinio klaidų, bet ir dėl to, kad „rusų raidės netinkamos kai kuriems lietuvių kalbos garsams išreiksti”.<br/>
+Jau 1864 m. vasarą pasikalbėjime su
+Muravjovu M. Valančius prašė padaryti išimtį bent maldaknygėms. 1867 m. kovo 11 d. prašė Kauno gubernatoriaus leisti lietuviškomis raidėmis išspausdinti Seną aukso altorių. Toji legali veikla nebuvo visiškai bergždžia. Jos dėka 1876-1878 metais Petrapilyje išleistos 6 lietuviškos knygos lotyniškomis raidėmis, įtraukta rusų šviesuomenės dalis kovon už lietuviškos spaudos laisvę, išleista eilė reikšmingų mokslo veikalų ir tuo būdu bent
+simboliškai sulaužytas vietinės administracijos aklai vykdomas spaudos draudimas.<br/>
+Ypač didelį vaidmenį atliko vyskupo M. Valančiaus Mažojoje Lietuvoje 1867-1869 slaptai išspausdintos ir visame krašte plačiai pasklidusios kurstomosios brošiūros, kuriuose nurodyta, kaip priešintis rusinimui ir tikybos persekiojimui: neatiduoti žandarams senųjų knygų, iš jų slaptai mokyti vaikus lietuviško rašto, neimti knygų imaskoliškomis raidėmis, jas deginti, pirkti Tilžėje spausdinamas lietuviškas knygas ir panašiai.
+</div>
+
+
+		</div>				
+		
+	<div class="footer">
+			<img src="img/teises.jpg" width="13px" height="13px">
+			Rasa Dainytė, 2019 VGTU
+		</div>
+		
+		<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("myBtn").style.display = "block";
+			  } else {
+				document.getElementById("myBtn").style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		</script>
+		
+	</body>
+</html>

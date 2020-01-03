@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	</head>
+	<body>
+	
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Eiti į viršų</button>
+	
+		<div id="meniu">
+			<div><a href="homepage.html"><img id="logo" src="img/LOGO_OK.jpg"></a></div>
+			<div id="pavadinimas">KNYGŲ </br> KONTRABANDA</div>
+			<nav id='cssmenu'>
+
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li><a href='homepage.html'>PAGRINDINIS PUSLAPIS</a></li>
+<li><a href='istorija.html'>ISTORINĖS SĄLYGOS</a>
+	<ul>
+      <li><a href='sukilimas.html'>1863-1864M. SUKILIMAS</a></li>
+      <li><a href='draudimas.html'>SPAUDOS DRAUDIMAS</a></li>
+   </ul>
+</li>
+<li><a href='keliai.html'>KELIAI</a>
+  
+</li>
+<li><a href='knygnesiai.html'>KNYGNEŠIAI</a>
+	<ul>
+      <li><a href='daraktoriai.html'>DARAKTORIAI</a></li>
+      <li><a href='remejai.html'>RĖMĖJAI</a></li>
+	  <li><a href='Bielinis.html'>JURGIS BIELINIS</a></li>
+      <li><a href='darbas.html'>KASDIENYBĖ</a></li>
+   </ul>
+</li>
+<li><a href='iamzinimas.html'>ĮAMŽINIMAS</a>
+	<ul>
+		<li><a href='filmai.html'>FILMAI</a></li>
+	</ul>
+</li>
+</ul>
+</nav>
+		</div>
+				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+<script>
+(function($) {
+$.fn.menumaker = function(options) {  
+ var cssmenu = $(this), settings = $.extend({
+   format: "dropdown",
+   sticky: false
+ }, options);
+ return this.each(function() {
+   $(this).find(".button").on('click', function(){
+     $(this).toggleClass('menu-opened');
+     var mainmenu = $(this).next('ul');
+     if (mainmenu.hasClass('open')) { 
+       mainmenu.slideToggle().removeClass('open');
+     }
+     else {
+       mainmenu.slideToggle().addClass('open');
+       if (settings.format === "dropdown") {
+         mainmenu.find('ul').show();
+       }
+     }
+   });
+   cssmenu.find('li ul').parent().addClass('has-sub');
+multiTg = function() {
+     cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+     cssmenu.find('.submenu-button').on('click', function() {
+       $(this).toggleClass('submenu-opened');
+       if ($(this).siblings('ul').hasClass('open')) {
+         $(this).siblings('ul').removeClass('open').slideToggle();
+       }
+       else {
+         $(this).siblings('ul').addClass('open').slideToggle();
+       }
+     });
+   };
+   if (settings.format === 'multitoggle') multiTg();
+   else cssmenu.addClass('dropdown');
+   if (settings.sticky === true) cssmenu.css('position', 'fixed');
+resizeFix = function() {
+  var mediasize = 1000;
+     if ($( window ).width() > mediasize) {
+       cssmenu.find('ul').show();
+     }
+     if ($(window).width() <= mediasize) {
+       cssmenu.find('ul').hide().removeClass('open');
+     }
+   };
+   resizeFix();
+   return $(window).on('resize', resizeFix);
+ });
+  };
+})(jQuery);
+
+(function($){
+$(document).ready(function(){
+$("#cssmenu").menumaker({
+   format: "multitoggle"
+});
+});
+})(jQuery);
+</script>
+<style>
+* {
+  box-sizing: border-box;
+  
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  background:#D8B572;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.container {
+  position: relative;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+   border: 0;
+   
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  
+  transition: .5s ease;
+
+  background: rgba(255, 255, 255, 0.8); /* Black background with 0.5 opacity */
+
+
+}
+
+.container:hover .overlay {
+  width: 100%;
+  left: 0;
+
+}
+
+.text {
+  color: #592508;
+  font-family: Verdana;
+  font-size: 15px;
+  font-weight: bold;
+
+}
+</style>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+	<div class="container">
+		<img src="img/knygnesysknyga.jpg">   
+		<div class="overlay">
+			<p class="text">Knyga "Knygnešys" turi keturias dalis. Visose jose pateikiami autentiški knygnešių bei daraktorių atsiminimai. I-as tomas - 1926m. Petras Ruseckas, II-as - 1928m. P.Ruseckas, III-as - 1997m. Vytautas Merkys, IV-as tomas - 2016 Benjaminas Kaluškevičius ir Kazys Misius.</p>
+		</div>
+	</div>
+	<div class="container">
+		<img src="img/filmas.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Filmas "Knygnešys" - tai vienas pirmųjų trumpametražinių, istorinių lietuviškų filmų apie knygnešystę. <a href="filmai.html">Skaityti daugiau..</a></p>
+		</div>
+	</div>
+	<div class="container">
+		 <img src="img/ustrone6.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Ustronės sodyba - tai unikalios konstrukcijos XIX amžiaus pabaigos svirnas, Juozo Tumo-Vaižganto ir Knygnešystės muziejus. Šiame vienkiemyje veikė viena stambiausių Garšvių knygnešių draugija, čia buvo ištremtas ir Vaižgantas.</p>
+		</div>
+	</div>
+  </div>
+  <div class="column">
+    <div class="container">
+		<img src="img/sienele1.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Benjaminas Kaluškevičius, Ona Žemaitytė - Narkevičienė "Šimtas knygnešių".Šioje knygoje į vieną vietą surinktos žinios apie Knygnešių sienelėje įrašytų žmonių gyvenimą ir veiklą.</p>
+		</div>
+	</div>
+    
+<div class="container">
+		<img src="img/diena.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Knygnešių diena Lietuvoje minima kiekvienais metais kovo 16-ąją. Ši diena pagerbti knygnešius pasirinkta neatsitiktinai. Būtent šią dieną 1846 metais gimė žymiausias Lietuvos knygnešys Jurgis Bielinis.</p>
+		</div>
+	</div>
+    <div class="container">
+		 <img src="img/sienele.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Knygnešių sienelė buvo baigta statyti 1960 m. liepą. Pirmoje lentoje įrašyti sunkiai nukentėję, antroje  - pasižymėję knygų skleidimo organiztaoriai, trečioje - labai pasižymėję knygnešiai.</p>
+		</div>
+	</div>
+  </div>  
+  <div class="column">
+  <div class="container">
+		<img src="img/iamzinimas.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Benjaminas Kaluškevičius, Kazys Misius "Lietuvos knygnešiai ir daraktoriai 1864-1904". Ši knyga - bibliografinis žinynas skirtas lietuviškos spaudos draudimo panaikinimo šimtmečiui,išleista 2004 metais. Joje įrašyta net 6131 pavardės.</p>
+		</div>
+	</div>
+          
+		  <div class="container">
+		 <img src="img/skulptura.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Skulptūra "Knygnešys" - žymiausia monumentali dekoratyvinė skulptūra stovinti Karo muziejaus sodelyje, Kaune. Pastatyta Juozo Zikaro 1939 metais.</p>
+		</div>
+	</div>
+   
+    
+  </div>
+  <div class="column">
+  
+ 
+ <div class="container">
+		 <img src="img/koplycia.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Bistrampolio knygnešių koplyčia įrengta vienoje Panevėžio rajono elektrinių. Joje įkurtas knygnešystės muziejus, šalia stovi kotplytstulpiai, skirti knygnešystei ir 1863m. sukilimo vadams. Koplyčią freskomis išgražino dalininkas Antanas Kmieliauskas. Jose pavaizduoti vaizdai, susiję su knygnešyste. Tačiau pagrindinis bažnyčios akcentas - autentiškas kryžius, kurį apsikabinęs 1918m. mirė Jurgis Bielinis.</p>
+		</div>
+	</div>
+   
+	<div class="container">
+		 <img src="img/lietuvos_mokykla.jpg" style="width:100%">
+		<div class="overlay">
+			<p class="text">Skulptūra "Lietuvos mokykla 1864-1904" dar kitaip žinoma "Vargo mokyklos pavadinimu". Ją sukūrė skulptorius Petras Rimša dar 1906 metais, tačiau galutinai skulptūra atstatyta tik 1994 metais Kaune,Vytauto Didžiojo Karo muziejaus sodelyje.</p>
+		</div>
+	</div>
+    
+  </div>
+</div>
+	
+		
+	<div class="footer">
+			<img src="img/teises.jpg" width="13px" height="13px">
+			Rasa Dainytė, 2019 VGTU
+		</div>
+		
+		<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("myBtn").style.display = "block";
+			  } else {
+				document.getElementById("myBtn").style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		</script>
+		
+	</body>
+</html>

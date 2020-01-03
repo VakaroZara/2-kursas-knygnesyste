@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Eiti į viršų</button>
+	
+		<div id="meniu">
+			<div><a href="homepage.html"><img id="logo" src="img/LOGO_OK.jpg"></a></div>
+			<div id="pavadinimas">KNYGŲ </br> KONTRABANDA</div>
+			<nav id='cssmenu'>
+
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li><a href='homepage.html'>PAGRINDINIS PUSLAPIS</a></li>
+<li><a href='istorija.html'>ISTORINĖS SĄLYGOS</a>
+	<ul>
+      <li><a href='sukilimas.html'>1863-1864M. SUKILIMAS</a></li>
+      <li><a href='draudimas.html'>SPAUDOS DRAUDIMAS</a></li>
+   </ul>
+</li>
+<li><a href='keliai.html'>KELIAI</a>
+ 
+</li>
+<li><a href='knygnesiai.html'>KNYGNEŠIAI</a>
+	<ul>
+      <li><a href='daraktoriai.html'>DARAKTORIAI</a></li>
+      <li><a href='remejai.html'>RĖMĖJAI</a></li>
+	  <li><a href='Bielinis.html'>JURGIS BIELINIS</a></li>
+      <li><a href='darbas.html'>KASDIENYBĖ</a></li>
+   </ul>
+</li>
+<li><a href='iamzinimas.html'>ĮAMŽINIMAS</a>
+	<ul>
+		<li><a href='filmai.html'>FILMAI</a></li>
+		
+	</ul>
+</li>
+</ul>
+</nav>
+		</div>
+				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+<script>
+(function($) {
+$.fn.menumaker = function(options) {  
+ var cssmenu = $(this), settings = $.extend({
+   format: "dropdown",
+   sticky: false
+ }, options);
+ return this.each(function() {
+   $(this).find(".button").on('click', function(){
+     $(this).toggleClass('menu-opened');
+     var mainmenu = $(this).next('ul');
+     if (mainmenu.hasClass('open')) { 
+       mainmenu.slideToggle().removeClass('open');
+     }
+     else {
+       mainmenu.slideToggle().addClass('open');
+       if (settings.format === "dropdown") {
+         mainmenu.find('ul').show();
+       }
+     }
+   });
+   cssmenu.find('li ul').parent().addClass('has-sub');
+multiTg = function() {
+     cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+     cssmenu.find('.submenu-button').on('click', function() {
+       $(this).toggleClass('submenu-opened');
+       if ($(this).siblings('ul').hasClass('open')) {
+         $(this).siblings('ul').removeClass('open').slideToggle();
+       }
+       else {
+         $(this).siblings('ul').addClass('open').slideToggle();
+       }
+     });
+   };
+   if (settings.format === 'multitoggle') multiTg();
+   else cssmenu.addClass('dropdown');
+   if (settings.sticky === true) cssmenu.css('position', 'fixed');
+resizeFix = function() {
+  var mediasize = 1000;
+     if ($( window ).width() > mediasize) {
+       cssmenu.find('ul').show();
+     }
+     if ($(window).width() <= mediasize) {
+       cssmenu.find('ul').hide().removeClass('open');
+     }
+   };
+   resizeFix();
+   return $(window).on('resize', resizeFix);
+ });
+  };
+})(jQuery);
+
+(function($){
+$(document).ready(function(){
+$("#cssmenu").menumaker({
+   format: "multitoggle"
+});
+});
+})(jQuery);
+</script>
+	<div id="gridas">
+			<div>
+				<h2>1863-1864 METŲ SUKILIMAS</h2>
+				<a href="sukilimas.html">
+				<img class="img1" src="img/sukilimas.jpg" alt="Nature" class="responsive">
+				</a>
+				<p>
+					Viena iš pagrindinių knygnešystės atsiradimo sąlygų yra 1863-1864 metais Lietuvoje ir Lenkijoje įvykęs sukilimas. Sukilėliai siekė aukštų tikslų, tačiau buvo susiskaldę, taip ir nesulaukė pagalbos iš vakarų, tad sukilimas buvo numalšintas. Siekiant ateityje išvengti naųjų sukilimų caro valdžia nusprendė paspartinti lietuvių tautos surusinimą, tad uždraudė spaudą lietuviškais rašmenimis. Lietuviai pradėjo priešintis, atsirado platus knygnešystės tinklas, apraizgęs didžiąją dalį Lietuvos.
+				</p>
+			</div>
+			<div>
+				<h2>SPAUDOS DRAUDIMAS</h2>
+				<a href="draudimas.html">
+				<img class="img1" src="img/draudimas.jpg" alt="Nature" class="responsive">
+				</a>
+				<p>Knygnešystė buvo tiesioginė spaudos draudimo pasekmė. Caro valdžia buvo įsitikinusi, kad Lietuva nuo seno yra rusų kraštas, tereikia panaikinti blogą lenkų įtaką. Spaudos draudimas tebuvo viena iš priemonių, siekiant lietuvius surusinti ir paversti Rusijos imperijos valdiniais.</p>
+			</div>
+		</div>			
+		
+	<div class="footer">
+			<img src="img/teises.jpg" width="13px" height="13px">
+			Rasa Dainytė, 2019 VGTU
+		</div>
+		
+		<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("myBtn").style.display = "block";
+			  } else {
+				document.getElementById("myBtn").style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		</script>
+		
+	</body>
+</html>

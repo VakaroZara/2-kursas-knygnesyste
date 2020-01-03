@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Eiti į viršų</button>
+	
+		<div id="meniu">
+			<div><a href="homepage.html"><img id="logo" src="img/LOGO_OK.jpg"></a></div>
+			<div id="pavadinimas">KNYGŲ </br> KONTRABANDA</div>
+			<nav id='cssmenu'>
+
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li><a href='homepage.html'>PAGRINDINIS PUSLAPIS</a></li>
+<li><a href='istorija.html'>ISTORINĖS SĄLYGOS</a>
+	<ul>
+      <li><a href='sukilimas.html'>1863-1864M. SUKILIMAS</a></li>
+      <li><a href='draudimas.html'>SPAUDOS DRAUDIMAS</a></li>
+   </ul>
+</li>
+<li><a href='keliai.html'>KELIAI</a>
+   
+</li>
+<li><a href='knygnesiai.html'>KNYGNEŠIAI</a>
+	<ul>
+      <li><a href='daraktoriai.html'>DARAKTORIAI</a></li>
+      <li><a href='remejai.html'>RĖMĖJAI</a></li>
+	  <li><a href='Bielinis.html'>JURGIS BIELINIS</a></li>
+      <li><a href='darbas.html'>KASDIENYBĖ</a></li>
+   </ul>
+</li>
+<li><a href='iamzinimas.html'>ĮAMŽINIMAS</a>
+	<ul>
+		<li><a href='filmai.html'>FILMAI</a></li>
+		
+	</ul>
+</li>
+</ul>
+</nav>
+		</div>
+		
+				<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+<script>
+(function($) {
+$.fn.menumaker = function(options) {  
+ var cssmenu = $(this), settings = $.extend({
+   format: "dropdown",
+   sticky: false
+ }, options);
+ return this.each(function() {
+   $(this).find(".button").on('click', function(){
+     $(this).toggleClass('menu-opened');
+     var mainmenu = $(this).next('ul');
+     if (mainmenu.hasClass('open')) { 
+       mainmenu.slideToggle().removeClass('open');
+     }
+     else {
+       mainmenu.slideToggle().addClass('open');
+       if (settings.format === "dropdown") {
+         mainmenu.find('ul').show();
+       }
+     }
+   });
+   cssmenu.find('li ul').parent().addClass('has-sub');
+multiTg = function() {
+     cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+     cssmenu.find('.submenu-button').on('click', function() {
+       $(this).toggleClass('submenu-opened');
+       if ($(this).siblings('ul').hasClass('open')) {
+         $(this).siblings('ul').removeClass('open').slideToggle();
+       }
+       else {
+         $(this).siblings('ul').addClass('open').slideToggle();
+       }
+     });
+   };
+   if (settings.format === 'multitoggle') multiTg();
+   else cssmenu.addClass('dropdown');
+   if (settings.sticky === true) cssmenu.css('position', 'fixed');
+resizeFix = function() {
+  var mediasize = 1000;
+     if ($( window ).width() > mediasize) {
+       cssmenu.find('ul').show();
+     }
+     if ($(window).width() <= mediasize) {
+       cssmenu.find('ul').hide().removeClass('open');
+     }
+   };
+   resizeFix();
+   return $(window).on('resize', resizeFix);
+ });
+  };
+})(jQuery);
+
+(function($){
+$(document).ready(function(){
+$("#cssmenu").menumaker({
+   format: "multitoggle"
+});
+});
+})(jQuery);
+</script>
+	<h2 class="vardas">Jurgis Bielinis</h2> 	
+<div class="gridas3">
+			
+<div class="foto">
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+	      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img class="img" src="img/bielinis.jpg">
+      </div>
+
+      <div class="item">
+        <img class="img" src="img/bielinis1.jpg">
+      </div>
+    
+      <div class="item">
+        <img class="img" src="img/bielinis2.jpg">
+      </div>
+	  
+	  <div class="item">
+        <img class="img" src="img/bielinis3.jpg">
+      </div>
+	  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="tekstas">
+	Jurgis Bielinis įėjo į lietuvių tautinio judėjimo istoriją kaip ryškiausias lietuvio knygnešio prototipas. J. Bielinio gimimo diena (kovo 16 d.) minima kaip Knygnešių diena.
+               Atsiminimų apie J. Bielinį paskelbė jį pažinoję Gabrielius Landsbergis-Žemkalnis, Liudvika Didžiulienė-Žmona, Gabrielė Petkevičaitė-Bitė, Mikalojus Katkus ir kt. Juozas Švaistas jį pavaizdavo romane „Knygnešių pėdsakais“ (1955 m.).
+               Tėviškėje išlikusi sodyba, šalia – koplytstulpis (aut. Leonas Juozonis), netoliese – Bielinio ąžuolas, už kurio slėpėsi atsišaudydamas nuo žandarų ir šalia ąžuolo akmuo su dedikacija; kryžius, po kuriuo mirė (prie Mitkų sodybos), dabar saugomas Pasvalyje, „Dūdorių” klube. Suoste – kapas ir antkapinis paminklas bažnyčios šventoriuje. 1931 m. pastatytas paminklas iš lauko akmenų. Paminklą statė šauliai, pavasarininkai, skautai, tautininkai, dirbo kalvis J. Korsakas.
+               2009 m. iš 100 Lietuvos asmenybių, per tūkstantmetį labiausiai nusipelniusių Lietuvai, įamžintų Tado Gutausko granitinėje skulptūroje „Vienybės medis”, paminėtas ir Jurgis Bielinis. <br/>
+			   Kilęs iš valstiečių. Šiauliuose ir Mintaujoje (dabar - Jelgava) pasimokęs privačiai, Rygoje 1872 baigė pradžios mokyklą. Gyveno tėviškėje. Draudžiamąją lietuvišką spaudą gabenti ir Jurgis Bielinio portretas. Dail. L. Juzonis platinti pradėjo 1873. Buvo vysk. M.Valančiaus talkininkas. Nuo 1890 pradėtas stipriai persekioti, jau nebegalėjo gyventi namuose, tėviškėje. Tampa knygnešiu profesionalu. Per 31-erius savo aktyvios veiklos metus jis vienas arba su talkininkais pergabeno per sieną ir Lietuvoje išplatino beveik pusę visų spaudinių, tuomet išspausdintų Mažojoje Lietuvoje. Daugiausia platindavo tuometinėse Šiaulių, Panevėžio, Ukmergės apskrityse. Buvo organizavęs prenumeratą ir reguliariai pristatydavo užsakytus laikraščius. Katalikiškos draudžiamosios spaudos latvių kalba nugabendavo ir į Latviją, kur tuo metu ji buvo uždrausta. Tarpininkaudavo dėl jos spausdinimo Mažojoje Lietuvoje. Subūrė didžiausią Lietuvoje spaudos platintojų tinklą. Daugelis vėliau žymių knygnešių iš jo išmoko knygnešystės meno: kaip saugiai pereiti saugomą sieną, kaip gabenti ir platinti spaudą. 1885-1895 - Garšvių knygnešių draugijos vienas iš įkūrėjų ir dalininkas. 1889-1895 palaikė ryšius su “Atgajos” draugija. Pats bendradarbiavo lietuviškoje spaudoje, išleido keletą knygelių, leido laikraštėlį “Baltasis erelis” (išleido tris numerius). Jam spausdinti iš M.Jankaus nusipirko ir parsigabeno rankinę spausdinimo mašiną. Caro žandarams ir pasienio sargybiniams buvo įkliuvęs 5 kartus, bet buvo sumanus ir drąsus, todėl pavykdavo ištrūkti. Už jo sugavimą valdžia buvo paskyrusi didelę premiją. Savojo gyvenimo šūkiu laikė paties sukurtą posakį: “Nemirsiu, kol maskoliai iš Lietuvos neišeis”. Sulaukė to laiko. Mirė eidamas pėsčiomis į Vilnių, į Lietuvių konferenciją, kuri Nepriklausomybės reikalavimą paskelbė bendru visos tautos reikalu.
+</div>
+
+		</div>	
+				
+		
+	<div class="footer">
+			<img src="img/teises.jpg" width="13px" height="13px">
+			Rasa Dainytė, 2019 VGTU
+		</div>
+		
+		<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("myBtn").style.display = "block";
+			  } else {
+				document.getElementById("myBtn").style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		</script>
+		
+	</body>
+</html>
